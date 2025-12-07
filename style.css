@@ -203,24 +203,28 @@ footer {
     }
 
     .logo {
-        display: block !important;
-        opacity: 0;
-        height: calc(2.5rem + 6vw);
-        top: calc(0.4rem + 0.5vw);
-        left: calc(0.6rem + 1vw);
+    display: block !important;
+    opacity: 0;
 
-        position: absolute;
-        transform: scale(0.9) translateY(0.1rem);
-        transition: opacity 0.35s ease, transform 0.35s ease;
-        pointer-events: none;
-        z-index: 5000;
-    }
+    /* BIGGER + fluid mobile sizing */
+    height: calc(3.5rem + 10vw);   /* ← THIS is the real fix */
 
-    header.scrolled .logo {
-        opacity: 1;
-        transform: scale(1) translateY(0);
-        pointer-events: auto;
-    }
+    top: calc(0.4rem + 1vw);
+    left: calc(0.8rem + 1vw);
+
+    position: absolute;
+    transform: scale(0.85) translateY(0.1rem);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+    pointer-events: none;
+    z-index: 5000;
+}
+
+header.scrolled .logo {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    pointer-events: auto;
+}
+
 
     .contact-btn {
         right: calc(0.6rem + 1vw);
@@ -249,3 +253,4 @@ footer {
         max-width: 100%;
     }
 }
+
