@@ -37,9 +37,7 @@ header {
 .logo {
     position: absolute;
     left: 5vw;
-
     height: calc(4rem + 12vw);
-
     opacity: 0;
     transform: scale(0.75) translateY(0.2rem);
     transition: opacity 0.35s ease, transform 0.35s ease;
@@ -83,7 +81,9 @@ header.scrolled .header-title {
 /* SPACING */
 .hero-space { height: 55vh; }
 
-/* PROJECT SECTION */
+/* ------------------------------------------
+   PROJECT SECTION
+-------------------------------------------*/
 .section {
     display: flex;
     justify-content: center;
@@ -110,16 +110,21 @@ header.scrolled .header-title {
     margin-bottom: 0.8rem;
 }
 
+/* 🎯 UPDATED — SMALLER TITLE */
 .project-title {
-    font-size: calc(1.8rem + 0.2vw);
+    font-size: calc(1.2rem + 0.6vw);
     font-weight: 700;
     line-height: 1.15;
 }
 
-/* VIDEO */
+/* ------------------------------------------
+   VIDEO
+-------------------------------------------*/
+
+/* 🎯 UPDATED — BIGGER VIDEO */
 .video-container {
-    width: 65%;
-    max-width: calc(25rem + 25vw);
+    width: 70%;                               /* increased from 65% */
+    max-width: calc(35rem + 30vw);            /* larger cinematic max width */
 }
 
 .embed-fix {
@@ -129,8 +134,9 @@ header.scrolled .header-title {
     box-shadow: 0 0.8rem 2.5rem rgba(0,0,0,0.15);
 }
 
-
-/* CONTACT */
+/* ------------------------------------------
+   CONTACT
+-------------------------------------------*/
 .contact-section {
     text-align: center;
     margin-top: 15vh;
@@ -166,11 +172,10 @@ footer {
 }
 
 /* ------------------------------------------
-   MOBILE (max-width: 100vw)
+   MOBILE (max-width: 100vh)
 -------------------------------------------*/
 @media (max-width: 100vh) {
 
-    /* TALLER HEADER = LOGO FITS INSIDE */
     header {
         height: calc(4rem + 3vw);
         padding: 0 calc(1rem + 2vw);
@@ -178,21 +183,16 @@ footer {
         align-items: center;
     }
 
-    /* MOBILE LOGO FIXED + CENTERED */
     .logo {
         display: block !important;
         opacity: 0;
-
         height: calc(2.2rem + 10vw);
         max-height: 85%;
-
         position: absolute;
         top: 50%;
         left: calc(0.8rem + 1vw);
-
         transform: translateY(-50%) scale(0.85);
         transition: opacity 0.35s ease, transform 0.35s ease;
-
         pointer-events: none;
         z-index: 5000;
     }
@@ -203,7 +203,6 @@ footer {
         pointer-events: auto;
     }
 
-    /* CONTACT BUTTON */
     .contact-btn {
         right: calc(0.6rem + 1vw);
         padding: calc(0.3rem + 0.5vw) calc(0.8rem + 1vw);
@@ -220,14 +219,15 @@ footer {
         max-width: calc(24rem + 40vw);
     }
 
-    .project-title { font-size: calc(2.2rem + 3vw); }
+    /* MOBILE TITLE SIZE = proportional */
+    .project-title {
+        font-size: calc(1.8rem + 2vw);
+    }
 
+    /* MOBILE VIDEO — bigger */
     .video-container {
         width: 100%;
         max-width: 100%;
+        margin-top: 1rem;
     }
 }
-
-
-
-
