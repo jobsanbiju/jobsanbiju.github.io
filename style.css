@@ -38,7 +38,7 @@ header {
 /* LOGO */
 .logo {
     position: absolute;
-    left: -2vw;
+    left: 5vw;
     height: 25rem;
     opacity: 0;
     transform: scale(0.8) translateY(0.3rem);
@@ -253,3 +253,4 @@ html, body {
 .section {
     min-height: auto;
 }
+
