@@ -5,25 +5,32 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Inter, sans-serif;
     background: #f7f7f7;
     color: #111;
+    line-height: 1.4;
 }
 
-/* HEADER */
+/* ------------------------------------------
+   HEADER
+-------------------------------------------*/
 header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    padding: 25px 40px;
+    padding: 1rem 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgba(255, 255, 255, 0.75);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(1rem);
+    border-bottom: 0.05rem solid rgba(0,0,0,0.05);
     z-index: 1000;
     transition: 0.35s ease;
 }
@@ -31,40 +38,43 @@ header {
 /* LOGO */
 .logo {
     position: absolute;
-    left: 40px;
-    height: 300px;
+    left: -2vw;
+    height: 25rem;
     opacity: 0;
-    transform: scale(0.8) translateY(8px);
+    transform: scale(0.8) translateY(0.3rem);
     transition: opacity 0.35s ease, transform 0.35s ease;
+    cursor: pointer;
 }
 
-/* HEADER TITLE */
+/* HEADER TITLE (centered) */
 .header-title {
-    font-size: 28px;
+    font-size: calc(1.2rem + 1vw);
     font-weight: 600;
     transition: opacity 0.35s ease, transform 0.35s ease;
+    cursor: pointer;
 }
 
-/* ON SCROLL */
+/* SCROLL TRANSITION */
 header.scrolled .header-title {
     opacity: 0;
-    transform: translateY(-10px);
+    transform: translateY(-0.5rem);
+    pointer-events: none;
 }
 
 header.scrolled .logo {
     opacity: 1;
-    transform: scale(1.25) translateY(0px);
+    transform: scale(1) translateY(0);
 }
 
 /* CONTACT BUTTON */
 .contact-btn {
     position: absolute;
-    right: 40px;
-    padding: 10px 26px;
-    border-radius: 40px;
+    right: 5vw;
+    padding: 0.5rem 1.3rem;
+    border-radius: 2rem;
+    border: 0.06rem solid #ccc;
     background: white;
-    border: 1px solid #ccc;
-    font-size: 15px;
+    font-size: calc(0.8rem + 0.2vw);
     cursor: pointer;
     transition: background 0.2s;
 }
@@ -73,73 +83,89 @@ header.scrolled .logo {
     background: #eee;
 }
 
-/* SPACING FROM TOP */
+/* ------------------------------------------
+   SPACING
+-------------------------------------------*/
 .hero-space {
-    height: 300px;
+    height: 55vh;
 }
 
-/* MAIN SECTION */
+/* ------------------------------------------
+   PROJECT SECTION
+-------------------------------------------*/
 .section {
     display: flex;
     justify-content: center;
     width: 100%;
+    padding: 5vh 0;
 }
 
 .project-wrapper {
     display: flex;
-    gap: 80px;
-    width: 85%;
-    max-width: 1500px;
+    flex-direction: row;
+    gap: 5vw;
+    width: 90%;
+    max-width: 80rem;
     align-items: center;
 }
 
 /* TEXT */
 .project-text {
-    max-width: 420px;
+    max-width: 22rem;
 }
 
 .project-label {
-    font-size: 12px;
+    font-size: calc(0.6rem + 0.3vw);
     opacity: 0.6;
-    letter-spacing: 2px;
+    letter-spacing: 0.15rem;
     text-transform: uppercase;
-    margin-bottom: 12px;
+    margin-bottom: 0.8rem;
 }
 
 .project-title {
-    font-size: 42px;
+    font-size: calc(1.8rem + 1.2vw);
     font-weight: 700;
+    line-height: 1.15;
 }
 
-/* VIDEO */
+/* ------------------------------------------
+   VIDEO
+-------------------------------------------*/
 .video-container {
-    width: 900px;
+    width: 55%;
+    max-width: 50rem;
 }
 
 .embed-fix {
     width: 100%;
-    border-radius: 20px;
     overflow: hidden;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
-    background: black;
+    border-radius: 1rem;
+    box-shadow: 0 0.8rem 2.5rem rgba(0,0,0,0.15);
 }
 
-/* CONTACT SECTION */
+/* ------------------------------------------
+   CONTACT SECTION
+-------------------------------------------*/
 .contact-section {
     text-align: center;
-    margin-top: 300px;    /* lowered for scroll space */
-    margin-bottom: 300px; /* ensures the page extends beyond viewport */
+    margin-top: 15vh;
+    padding: 5vh 5vw;
 }
 
 .contact-section h2 {
-    font-size: 30px;
-    margin-bottom: 10px;
+    font-size: calc(1.4rem + 0.8vw);
+    margin-bottom: 0.6rem;
+}
+
+.contact-section p {
+    font-size: calc(0.9rem + 0.3vw);
+    opacity: 0.7;
 }
 
 .contact-mail {
-    margin-top: 8px;
+    margin-top: 1rem;
     display: inline-block;
-    font-size: 18px;
+    font-size: calc(1rem + 0.2vw);
     text-decoration: none;
     color: #111;
 }
@@ -148,195 +174,82 @@ header.scrolled .logo {
     text-decoration: underline;
 }
 
-/* FOOTER */
+/* ------------------------------------------
+   FOOTER
+-------------------------------------------*/
 footer {
-    padding: 40px;
+    padding: 2rem;
+    font-size: calc(0.8rem + 0.2vw);
     opacity: 0.6;
-    font-size: 14px;
     text-align: center;
 }
-/* --- Scroll Interaction Fixes --- */
 
-/* When Job San Biju fades out, it should stop blocking clicks */
-.header-title.hidden {
-    pointer-events: none;
-}
-
-/* Make sure the logo is always clickable */
-.logo {
-    pointer-events: auto;
-    cursor: pointer;
-}
-/* ------------------------------------------ */
-/* MOBILE FIXES                               */
-/* ------------------------------------------ */
+/* ------------------------------------------
+   MOBILE (max-width: 768px)
+-------------------------------------------*/
 @media (max-width: 768px) {
 
-    /* HEADER MOBILE */
     header {
-        padding: 14px 20px;
-        justify-content: center;
-    }
-
-    /* FIX: Center the title on mobile */
-    .header-title {
-        position: relative !important;
-        left: auto !important;
-        transform: none !important;
-        font-size: 22px;
-    }
-
-    /* FIX: Make logo hidden but not break layout */
-    .logo {
-        display: none !important;
-    }
-
-    /* FIX: Contact button */
-    .contact-btn {
-        position: absolute;
-        right: 16px;
-        top: 12px;
-        padding: 8px 20px;
-        font-size: 14px;
-    }
-
-    /* TYPOGRAPHY MOBILE */
-    .project-title {
-        font-size: 32px;
-        line-height: 1.2;
-    }
-
-    .project-text {
-        padding: 0 20px;
-    }
-
-    /* VIDEO CONTAINER MOBILE */
-    .video-container {
-        width: 100%;
-        max-width: 100%;
-        margin: 20px auto;
-        border-radius: 12px;
-        box-shadow: none;
-    }
-
-    /* Vimeo aspect ratio wrapper fix */
-    .vimeo-wrapper {
-        padding-top: 56.25% !important; /* 16:9 ratio */
-    }
-
-    /* CONTACT SECTION */
-    .contact-section {
-        padding: 60px 20px;
-        text-align: center;
-    }
-}
-/* ------------------------------------------ */
-/* MOBILE RESPONSIVE OPTIMIZATION             */
-/* ------------------------------------------ */
-@media (max-width: 768px) {
-
-    body {
-        background: #f9f9f9;
-    }
-
-    /* HEADER */
-    header {
-        padding: 12px 16px;
-        height: auto;
-        justify-content: center !important;
+        padding: 0.9rem 1.2rem;
     }
 
     .header-title {
-        position: relative !important;
-        left: 0 !important;
-        transform: none !important;
-        font-size: 20px !important;
-        text-align: center;
-        width: 100%;
+        font-size: calc(1.4rem + 1vw);
     }
 
-    /* Logo hidden entirely (but doesn't break JS) */
     .logo {
         display: none !important;
     }
 
     .contact-btn {
-        position: absolute;
-        right: 16px;
-        top: 10px;
-        padding: 6px 18px;
-        font-size: 13px;
+        right: 1.2rem;
+        padding: 0.4rem 1rem;
+        font-size: 0.9rem;
     }
 
-    /* HERO SPACE (reduced drastically) */
     .hero-space {
-        height: 40px !important;
-    }
-
-    /* PROJECT SECTION */
-    .section {
-        padding-top: 20px !important;
-        display: block;
+        height: 10vh;
     }
 
     .project-wrapper {
-        flex-direction: column !important;
-        gap: 24px !important;
-        width: 100% !important;
-        padding: 0 20px !important;
-    }
-
-    .project-text {
-        max-width: 100% !important;
-        text-align: left;
-    }
-
-    .project-label {
-        font-size: 11px;
-        margin-bottom: 8px;
+        flex-direction: column;
+        gap: 2rem;
+        width: 100%;
+        padding: 0 1.5rem;
     }
 
     .project-title {
-        font-size: 30px !important;
-        line-height: 1.2;
+        font-size: calc(2rem + 2vw);
     }
 
-    /* VIDEO */
     .video-container {
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 auto !important;
-        border-radius: 14px;
-        overflow: hidden;
+        width: 100%;
+        max-width: 100%;
     }
 
-    .vimeo-wrapper > div {
-        padding-top: 56.25% !important; /* 16:9 mobile ratio */
+    .embed-fix {
+        border-radius: 0.8rem;
+        box-shadow: none;
     }
 
-    /* CONTACT SECTION */
     .contact-section {
-        padding: 60px 20px !important;
-        margin-top: 40px !important;
-        text-align: center;
+        padding: 2rem 1.5rem;
+        margin-top: 8vh;
     }
 
     .contact-section h2 {
-        font-size: 22px;
-        margin-bottom: 10px;
-    }
-
-    .contact-section p {
-        font-size: 14px;
-        opacity: 0.7;
-    }
-
-    .contact-mail {
-        font-size: 15px;
+        font-size: calc(1.6rem + 1vw);
     }
 
     footer {
-        padding: 20px;
-        font-size: 13px;
+        font-size: 0.9rem;
     }
+}
+html, body {
+    height: auto !important;
+    overflow-y: auto !important;
+}
+
+.section {
+    min-height: auto;
 }
