@@ -1,64 +1,15 @@
-/* RESET */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Inter, sans-serif;
-    background: #f7f7f7;
-    color: #111;
-    line-height: 1.4;
-}
-
-/* ------------------------------------------
-   HEADER
--------------------------------------------*/
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding: calc(0.8rem + 0.4vw) 5vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(1rem);
-    border-bottom: 0.05rem solid rgba(0,0,0,0.05);
-    z-index: 1000;
-    transition: 0.35s ease;
-}
-
-/* LOGO */
+/* LOGO — DESKTOP */
 .logo {
     position: absolute;
     left: 5vw;
-    height: calc(5rem + 15vw);
+
+    /* Larger + responsive */
+    height: calc(4rem + 12vw);
+
     opacity: 0;
-    transform: scale(0.8) translateY(0.3rem);
+    transform: scale(0.75) translateY(0.2rem);
     transition: opacity 0.35s ease, transform 0.35s ease;
     cursor: pointer;
-}
-
-/* HEADER TITLE (centered) */
-.header-title {
-    font-size: calc(1.2rem + 1vw);
-    font-weight: 600;
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    cursor: pointer;
-}
-
-/* SCROLL TRANSITION */
-header.scrolled .header-title {
-    opacity: 0;
-    transform: translateY(-0.5rem);
-    pointer-events: none;
 }
 
 header.scrolled .logo {
@@ -66,192 +17,31 @@ header.scrolled .logo {
     transform: scale(1) translateY(0);
 }
 
-/* CONTACT BUTTON */
-.contact-btn {
-    position: absolute;
-    right: 5vw;
-    padding: 0.5rem 1.3rem;
-    border-radius: 2rem;
-    border: 0.06rem solid #ccc;
-    background: white;
-    font-size: calc(0.8rem + 0.2vw);
-    cursor: pointer;
-    transition: background 0.2s;
-}
-
-.contact-btn:hover {
-    background: #eee;
-}
-
 /* ------------------------------------------
-   SPACING
--------------------------------------------*/
-.hero-space {
-    height: 55vh;
-}
-
-/* ------------------------------------------
-   PROJECT SECTION
--------------------------------------------*/
-.section {
-    display: flex;
-    justify-content: center;
-    width: 100%;
-    padding: 5vh 0;
-}
-
-.project-wrapper {
-    display: flex;
-    flex-direction: row;
-    gap: 5vw;
-    width: 90%;
-
-    /* UPDATED: fluid max-width */
-    max-width: calc(40rem + 20vw);
-
-    align-items: center;
-}
-
-/* TEXT */
-.project-text {
-    max-width: calc(12rem + 8vw);
-}
-
-.project-label {
-    font-size: calc(0.6rem + 0.3vw);
-    opacity: 0.6;
-    letter-spacing: 0.15rem;
-    text-transform: uppercase;
-    margin-bottom: 0.8rem;
-}
-
-.project-title {
-    font-size: calc(1.8rem + 1.2vw);
-    font-weight: 700;
-    line-height: 1.15;
-}
-
-/* ------------------------------------------
-   VIDEO
--------------------------------------------*/
-.video-container {
-    width: 55%;
-
-    /* UPDATED: fluid max-width */
-    max-width: calc(25rem + 25vw);
-}
-
-.embed-fix {
-    width: 100%;
-    overflow: hidden;
-    border-radius: 1rem;
-    box-shadow: 0 0.8rem 2.5rem rgba(0,0,0,0.15);
-}
-
-/* ------------------------------------------
-   CONTACT SECTION
--------------------------------------------*/
-.contact-section {
-    text-align: center;
-    margin-top: 15vh;
-    padding: 5vh 5vw;
-}
-
-.contact-section h2 {
-    font-size: calc(1.4rem + 0.8vw);
-    margin-bottom: 0.6rem;
-}
-
-.contact-section p {
-    font-size: calc(0.9rem + 0.3vw);
-    opacity: 0.7;
-}
-
-.contact-mail {
-    margin-top: 1rem;
-    display: inline-block;
-    font-size: calc(1rem + 0.2vw);
-    text-decoration: none;
-    color: #111;
-}
-
-.contact-mail:hover {
-    text-decoration: underline;
-}
-
-/* ------------------------------------------
-   FOOTER
--------------------------------------------*/
-footer {
-    padding: 2rem;
-    font-size: calc(0.8rem + 0.2vw);
-    opacity: 0.6;
-    text-align: center;
-}
-
-/* ------------------------------------------
-   MOBILE (max-width: 768px)
+   MOBILE LOGO (max-width: 100vw)
 -------------------------------------------*/
 @media (max-width: 100vw) {
-
-    header {
-        padding: calc(0.6rem + 0.5vw) calc(1rem + 2vw);
-    }
-
-    .header-title {
-        font-size: calc(1.6rem + 2vw);
-    }
-
     .logo {
-    display: block !important;
-    opacity: 0;
+        display: block !important;
+        opacity: 0;
 
-    /* BIGGER + fluid mobile sizing */
-    height: calc(3.5rem + 25vw);   /* ← THIS is the real fix */
+        /* FIXED: Much bigger for mobile */
+        height: calc(4.5rem + 28vw);
 
-    top: calc(0.4rem + 1vw);
-    left: calc(0.8rem + 1vw);
+        /* centered visually in header */
+        top: calc(0.6rem + 0.8vw);
+        left: calc(0.9rem + 1vw);
 
-    position: absolute;
-    transform: scale(0.85) translateY(0.1rem);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    pointer-events: none;
-    z-index: 5000;
-}
-
-header.scrolled .logo {
-    opacity: 1;
-    transform: scale(1) translateY(0);
-    pointer-events: auto;
-}
-
-
-    .contact-btn {
-        right: calc(0.6rem + 1vw);
-        padding: calc(0.3rem + 0.5vw) calc(0.8rem + 1vw);
-        font-size: calc(1rem + 0.4vw);
+        position: absolute;
+        transform: scale(0.85) translateY(0.1rem);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        pointer-events: none;
+        z-index: 5000;
     }
 
-    .hero-space {
-        height: 12vh;
-    }
-
-    .project-wrapper {
-        flex-direction: column;
-        gap: calc(1rem + 2vw);
-        width: 100%;
-        padding: 0 calc(1rem + 2vw);
-        max-width: calc(24rem + 40vw);
-    }
-
-    .project-title {
-        font-size: calc(2.2rem + 3vw);
-    }
-
-    .video-container {
-        width: 100%;
-        max-width: 100%;
+    header.scrolled .logo {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+        pointer-events: auto;
     }
 }
-
-
