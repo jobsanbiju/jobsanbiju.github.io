@@ -167,7 +167,7 @@ footer {
 /* ------------------------------------------
    MOBILE (max-width: 100vw)
 -------------------------------------------*/
-@media (max-width: 100vw) {
+@media (max-width: 100vh) {
 
     /* TALLER HEADER = LOGO FITS INSIDE */
     header {
@@ -226,3 +226,4 @@ footer {
         max-width: 100%;
     }
 }
+
