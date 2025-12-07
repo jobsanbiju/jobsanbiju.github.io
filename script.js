@@ -4,18 +4,12 @@ const logo = document.getElementById("logo");
 const contactBtn = document.querySelector(".contact-btn");
 const contactSection = document.getElementById("contact");
 
-// HEADER SCROLL ANIMATION — ENABLED FOR ALL DEVICES
+// HEADER SCROLL ANIMATION
 window.addEventListener("scroll", () => {
-    const scrollY = window.scrollY;
-
-    if (scrollY > 70) {
+    if (window.scrollY > 70) {
         header.classList.add("scrolled");
-        headerTitle.classList.add("hide-title");
-        logo.classList.add("show-logo");
     } else {
         header.classList.remove("scrolled");
-        headerTitle.classList.remove("hide-title");
-        logo.classList.remove("show-logo");
     }
 });
 
