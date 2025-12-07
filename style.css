@@ -167,3 +167,66 @@ footer {
     pointer-events: auto;
     cursor: pointer;
 }
+/* ------------------------------------------ */
+/* MOBILE FIXES                               */
+/* ------------------------------------------ */
+@media (max-width: 768px) {
+
+    /* HEADER MOBILE */
+    header {
+        padding: 14px 20px;
+        justify-content: center;
+    }
+
+    /* FIX: Center the title on mobile */
+    .header-title {
+        position: relative !important;
+        left: auto !important;
+        transform: none !important;
+        font-size: 22px;
+    }
+
+    /* FIX: Make logo hidden but not break layout */
+    .logo {
+        display: none !important;
+    }
+
+    /* FIX: Contact button */
+    .contact-btn {
+        position: absolute;
+        right: 16px;
+        top: 12px;
+        padding: 8px 20px;
+        font-size: 14px;
+    }
+
+    /* TYPOGRAPHY MOBILE */
+    .project-title {
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .project-text {
+        padding: 0 20px;
+    }
+
+    /* VIDEO CONTAINER MOBILE */
+    .video-container {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px auto;
+        border-radius: 12px;
+        box-shadow: none;
+    }
+
+    /* Vimeo aspect ratio wrapper fix */
+    .vimeo-wrapper {
+        padding-top: 56.25% !important; /* 16:9 ratio */
+    }
+
+    /* CONTACT SECTION */
+    .contact-section {
+        padding: 60px 20px;
+        text-align: center;
+    }
+}
