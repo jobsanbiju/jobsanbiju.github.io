@@ -111,7 +111,7 @@ header.scrolled .header-title {
 }
 
 .project-title {
-    font-size: calc(1.8rem + 0.8vw);
+    font-size: calc(1.8rem + 0.2vw);
     font-weight: 700;
     line-height: 1.15;
 }
@@ -227,5 +227,6 @@ footer {
         max-width: 100%;
     }
 }
+
 
 
