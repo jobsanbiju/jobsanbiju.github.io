@@ -197,23 +197,25 @@ footer {
         font-size: calc(1.4rem + 1vw);
     }
 
-   .logo {
+    /* MOBILE LOGO FIX */
+    .logo {
         display: block !important;
         opacity: 0;
-        height: 2.6rem;
+        height: 2.6rem; 
         top: 0.5rem;
         left: 1rem;
+        position: absolute;
         transform: scale(0.8) translateY(0.2rem);
-        z-index: 5000;
+        transition: opacity 0.35s ease, transform 0.35s ease;
         pointer-events: none;
+        z-index: 5000;
     }
 
     header.scrolled .logo {
         opacity: 1;
-        pointer-events: auto;
         transform: scale(1) translateY(0);
+        pointer-events: auto;
     }
-}
 
     .contact-btn {
         right: 1.2rem;
@@ -259,13 +261,3 @@ footer {
         font-size: 0.9rem;
     }
 }
-html, body {
-    height: auto !important;
-    overflow-y: auto !important;
-}
-
-.section {
-    min-height: auto;
-}
-
-
