@@ -13,14 +13,21 @@ window.addEventListener("scroll", () => {
     }
 });
 
-window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-        header.classList.add("scrolled");
-        headerTitle.classList.add("hidden");
-        logo.classList.add("visible");
+document.addEventListener("scroll", () => {
+    const logo = document.getElementById("logo");
+    const title = document.getElementById("headerTitle");
+
+    // Disable animation entirely on mobile
+    if (window.innerWidth < 768) return;
+
+    if (window.scrollY > 80) {
+        title.style.opacity = "0";
+        logo.style.opacity = "1";
+        logo.style.transform = "scale(1) translateY(0)";
     } else {
-        header.classList.remove("scrolled");
-        headerTitle.classList.remove("hidden");
-        logo.classList.remove("visible");
+        title.style.opacity = "1";
+        logo.style.opacity = "0";
+        logo.style.transform = "scale(0.6) translateY(20px)";
     }
 });
+
