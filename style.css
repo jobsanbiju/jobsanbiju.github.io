@@ -21,19 +21,27 @@ header.scrolled .logo {
    MOBILE LOGO (max-width: 100vw)
 -------------------------------------------*/
 @media (max-width: 100vw) {
+
+    /* Give header room so logo stays inside */
+    header {
+        padding: calc(0.9rem + 0.8vw) calc(1rem + 2vw);
+        height: calc(3.8rem + 6vw);   /* NEW */
+    }
+
     .logo {
         display: block !important;
         opacity: 0;
 
-        /* FIXED: Much bigger for mobile */
-        height: calc(4.5rem + 28vw);
+        /* Reduced, still clean & visible */
+        height: calc(2.2rem + 12vw);
 
-        /* centered visually in header */
-        top: calc(0.6rem + 0.8vw);
-        left: calc(0.9rem + 1vw);
+        /* centered inside header */
+        top: 50%;
+        transform: translateY(-50%) scale(0.9);
 
+        left: calc(0.8rem + 1vw);
         position: absolute;
-        transform: scale(0.85) translateY(0.1rem);
+
         transition: opacity 0.35s ease, transform 0.35s ease;
         pointer-events: none;
         z-index: 5000;
@@ -41,7 +49,7 @@ header.scrolled .logo {
 
     header.scrolled .logo {
         opacity: 1;
-        transform: scale(1) translateY(0);
+        transform: translateY(-50%) scale(1);
         pointer-events: auto;
     }
 }
