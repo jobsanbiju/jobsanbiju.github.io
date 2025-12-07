@@ -221,7 +221,7 @@ footer {
 
     /* MOBILE TITLE SIZE = proportional */
     .project-title {
-        font-size: calc(1.8rem + 2vw);
+        font-size: calc(1.8rem + .75vw);
     }
 
     /* MOBILE VIDEO — bigger */
@@ -231,3 +231,4 @@ footer {
         margin-top: 1rem;
     }
 }
+
