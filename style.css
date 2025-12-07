@@ -192,34 +192,29 @@ footer {
 /* ------------------------------------------
    MOBILE (max-width: 768px)
 -------------------------------------------*/
-@media (max-width: 768px) {
+@media (max-width: 100vw) {
 
     header {
-        padding: 0.9rem 1.2rem;
+        padding: calc(0.6rem + 0.5vw) calc(1rem + 2vw);
     }
 
     .header-title {
-        font-size: calc(1.4rem + 1vw);
+        font-size: calc(1.6rem + 2vw);
     }
 
-    /* MOBILE LOGO FIX */
     .logo {
-    display: block !important;
-    opacity: 0;
+        display: block !important;
+        opacity: 0;
+        height: calc(2.5rem + 6vw);
+        top: calc(0.4rem + 0.5vw);
+        left: calc(0.6rem + 1vw);
 
-    /* fluid responsive size */
-    height: calc(2.5rem + 6vw);
-
-    top: 0.7rem;
-    left: 1.2rem;
-
-    position: absolute;
-    transform: scale(0.9) translateY(0.1rem);
-    transition: opacity 0.35s ease, transform 0.35s ease;
-    pointer-events: none;
-    z-index: 5000;
-}
-
+        position: absolute;
+        transform: scale(0.9) translateY(0.1rem);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+        pointer-events: none;
+        z-index: 5000;
+    }
 
     header.scrolled .logo {
         opacity: 1;
@@ -228,52 +223,29 @@ footer {
     }
 
     .contact-btn {
-        right: 1.2rem;
-        padding: 0.4rem 1rem;
-        font-size: 0.9rem;
+        right: calc(0.6rem + 1vw);
+        padding: calc(0.3rem + 0.5vw) calc(0.8rem + 1vw);
+        font-size: calc(1rem + 0.4vw);
     }
 
     .hero-space {
-        height: 10vh;
+        height: 12vh;
     }
 
     .project-wrapper {
         flex-direction: column;
-        gap: 2rem;
+        gap: calc(1rem + 2vw);
         width: 100%;
-        padding: 0 1.5rem;
-
-        max-width: calc(20rem + 40vw);
+        padding: 0 calc(1rem + 2vw);
+        max-width: calc(24rem + 40vw);
     }
 
     .project-title {
-        font-size: calc(2rem + 2vw);
+        font-size: calc(2.2rem + 3vw);
     }
 
     .video-container {
         width: 100%;
         max-width: 100%;
     }
-
-    .embed-fix {
-        border-radius: 0.8rem;
-        box-shadow: none;
-    }
-
-    .contact-section {
-        padding: 2rem 1.5rem;
-        margin-top: 8vh;
-    }
-
-    .contact-section h2 {
-        font-size: calc(1.6rem + 1vw);
-    }
-
-    footer {
-        font-size: 0.9rem;
-    }
 }
-
-
-
-
