@@ -24,7 +24,7 @@ header {
     top: 0;
     left: 0;
     width: 100%;
-    padding: 1rem 5vw;
+    padding: calc(0.8rem + 0.4vw) 5vw;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -39,7 +39,7 @@ header {
 .logo {
     position: absolute;
     left: 5vw;
-    height: 25rem;
+    height: calc(5rem + 15vw);
     opacity: 0;
     transform: scale(0.8) translateY(0.3rem);
     transition: opacity 0.35s ease, transform 0.35s ease;
@@ -105,13 +105,16 @@ header.scrolled .logo {
     flex-direction: row;
     gap: 5vw;
     width: 90%;
-    max-width: 80rem;
+
+    /* UPDATED: fluid max-width */
+    max-width: calc(40rem + 20vw);
+
     align-items: center;
 }
 
 /* TEXT */
 .project-text {
-    max-width: 22rem;
+    max-width: calc(12rem + 8vw);
 }
 
 .project-label {
@@ -133,7 +136,9 @@ header.scrolled .logo {
 -------------------------------------------*/
 .video-container {
     width: 55%;
-    max-width: 50rem;
+
+    /* UPDATED: fluid max-width */
+    max-width: calc(25rem + 25vw);
 }
 
 .embed-fix {
@@ -201,7 +206,7 @@ footer {
     .logo {
         display: block !important;
         opacity: 0;
-        height: 2.6rem; 
+        height: calc(2.2rem + 1vw);
         top: 0.5rem;
         left: 1rem;
         position: absolute;
@@ -232,6 +237,8 @@ footer {
         gap: 2rem;
         width: 100%;
         padding: 0 1.5rem;
+
+        max-width: calc(20rem + 40vw);
     }
 
     .project-title {
