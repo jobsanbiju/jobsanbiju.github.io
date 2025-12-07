@@ -207,7 +207,7 @@ footer {
     opacity: 0;
 
     /* BIGGER + fluid mobile sizing */
-    height: calc(3.5rem + 10vw);   /* ← THIS is the real fix */
+    height: calc(3.5rem + 25vw);   /* ← THIS is the real fix */
 
     top: calc(0.4rem + 1vw);
     left: calc(0.8rem + 1vw);
@@ -253,4 +253,5 @@ header.scrolled .logo {
         max-width: 100%;
     }
 }
+
 
