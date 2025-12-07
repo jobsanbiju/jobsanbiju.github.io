@@ -1,0 +1,169 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    background: #f7f7f7;
+    color: #111;
+}
+
+/* HEADER */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    z-index: 1000;
+    transition: 0.35s ease;
+}
+
+/* LOGO */
+.logo {
+    position: absolute;
+    left: 40px;
+    height: 300px;
+    opacity: 0;
+    transform: scale(0.8) translateY(8px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* HEADER TITLE */
+.header-title {
+    font-size: 28px;
+    font-weight: 600;
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+/* ON SCROLL */
+header.scrolled .header-title {
+    opacity: 0;
+    transform: translateY(-10px);
+}
+
+header.scrolled .logo {
+    opacity: 1;
+    transform: scale(1.25) translateY(0px);
+}
+
+/* CONTACT BUTTON */
+.contact-btn {
+    position: absolute;
+    right: 40px;
+    padding: 10px 26px;
+    border-radius: 40px;
+    background: white;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.contact-btn:hover {
+    background: #eee;
+}
+
+/* SPACING FROM TOP */
+.hero-space {
+    height: 300px;
+}
+
+/* MAIN SECTION */
+.section {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.project-wrapper {
+    display: flex;
+    gap: 80px;
+    width: 85%;
+    max-width: 1500px;
+    align-items: center;
+}
+
+/* TEXT */
+.project-text {
+    max-width: 420px;
+}
+
+.project-label {
+    font-size: 12px;
+    opacity: 0.6;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+.project-title {
+    font-size: 42px;
+    font-weight: 700;
+}
+
+/* VIDEO */
+.video-container {
+    width: 900px;
+}
+
+.embed-fix {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    background: black;
+}
+
+/* CONTACT SECTION */
+.contact-section {
+    text-align: center;
+    margin-top: 300px;    /* lowered for scroll space */
+    margin-bottom: 300px; /* ensures the page extends beyond viewport */
+}
+
+.contact-section h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.contact-mail {
+    margin-top: 8px;
+    display: inline-block;
+    font-size: 18px;
+    text-decoration: none;
+    color: #111;
+}
+
+.contact-mail:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    padding: 40px;
+    opacity: 0.6;
+    font-size: 14px;
+    text-align: center;
+}
+/* --- Scroll Interaction Fixes --- */
+
+/* When Job San Biju fades out, it should stop blocking clicks */
+.header-title.hidden {
+    pointer-events: none;
+}
+
+/* Make sure the logo is always clickable */
+.logo {
+    pointer-events: auto;
+    cursor: pointer;
+}
