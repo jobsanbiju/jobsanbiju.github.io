@@ -22,27 +22,28 @@ header.scrolled .logo {
 -------------------------------------------*/
 @media (max-width: 100vw) {
 
-    /* Give header room so logo stays inside */
+    /* FIXED HEIGHT HEADER — prevents logo from escaping */
     header {
-        padding: calc(0.9rem + 0.8vw) calc(1rem + 2vw);
-        height: calc(3.8rem + 6vw);   /* NEW */
+        height: calc(4rem + 3vw);     /* consistent height */
+        padding: 0 calc(1rem + 2vw);
+        display: flex;
+        align-items: center;
     }
 
+    /* MOBILE LOGO — always centered vertically */
     .logo {
         display: block !important;
         opacity: 0;
 
-        /* Reduced, still clean & visible */
-        height: calc(2.2rem + 12vw);
+        height: calc(2.2rem + 10vw); /* reduced from earlier */
 
-        /* centered inside header */
-        top: 50%;
-        transform: translateY(-50%) scale(0.9);
-
-        left: calc(0.8rem + 1vw);
         position: absolute;
+        top: 50%;                    /* center vertically */
+        left: calc(0.8rem + 1vw);
 
+        transform: translateY(-50%) scale(0.85);
         transition: opacity 0.35s ease, transform 0.35s ease;
+
         pointer-events: none;
         z-index: 5000;
     }
