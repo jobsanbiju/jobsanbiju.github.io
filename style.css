@@ -100,7 +100,7 @@ header.scrolled .header-title {
     align-items: center;
 }
 
-.project-text { max-width: calc(12rem + 8vw); }
+.project-text { max-width: calc(12rem + 1vw); }
 
 .project-label {
     font-size: calc(0.6rem + 0.3vw);
@@ -227,6 +227,7 @@ footer {
         max-width: 100%;
     }
 }
+
 
 
 
