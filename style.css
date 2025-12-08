@@ -186,7 +186,7 @@ footer {
     .logo {
         display: block !important;
         opacity: 0;
-        height: calc(2.2rem + 10vw);
+        height: calc(2.2rem + 6vw);
         max-height: 85%;
         position: absolute;
         top: 50%;
@@ -231,4 +231,5 @@ footer {
         margin-top: 1rem;
     }
 }
+
 
