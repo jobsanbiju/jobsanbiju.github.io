@@ -37,7 +37,7 @@ header {
 .logo {
     position: absolute;
     left: 5vw;
-    height: calc(4rem + 5vw);
+    height: calc(4rem + 1vw);
     opacity: 0;
     transform: scale(0.75) translateY(0.2rem);
     transition: opacity 0.35s ease, transform 0.35s ease;
@@ -231,6 +231,7 @@ footer {
         margin-top: 1rem;
     }
 }
+
 
 
 
