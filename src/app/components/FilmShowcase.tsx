@@ -22,7 +22,7 @@ export function FilmShowcase() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   return (
-    <section id="work" className="section-surface py-20 px-4">
+    <section id="work" className="section-surface section-fade py-20 px-4">
       <div className="container mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

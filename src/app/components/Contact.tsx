@@ -4,7 +4,7 @@ import HalationText from './HalationText';
 
 export function Contact() {
   return (
-    <section id="contact" className="section-surface py-20 px-4">
+    <section id="contact" className="section-surface section-fade py-20 px-4">
       <div className="container mx-auto max-w-4xl">
         {/* Contact Info */}
         <motion.div

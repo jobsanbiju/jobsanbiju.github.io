@@ -4,7 +4,7 @@ import HalationText from './HalationText';
 
 export function About() {
   return (
-    <section id="about" className="relative min-h-[85vh] overflow-hidden">
+    <section id="about" className="relative min-h-[85vh] overflow-hidden section-fade">
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{ backgroundImage: `url(${aboutImg})` }}
