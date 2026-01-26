@@ -44,7 +44,7 @@ export function Hero() {
           >
             <HalationText glowColor="rgba(255,80,70,0.98)" blurAmount="12px" opacity={0.62}>
               <span className="block text-[0.95rem] md:text-[1.1rem] uppercase tracking-[0.45em] text-white/75 whitespace-nowrap">
-                CINEMATOGRAPHER · FILMMAKER · COLORIST
+                FILMMAKER · CINEMATOGRAPHER · COLORIST
               </span>
               <span className="mt-3 block text-sm md:text-base text-white/85">
                 Visual storytelling shaped through light, motion, and tone.
