@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { Play, Award } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import thumb from '../../../images/thumb.jpg';
 import HalationText from './HalationText';
 
@@ -20,6 +20,27 @@ const films = [
 export function FilmShowcase() {
   const [activeFilmId, setActiveFilmId] = useState<number | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const cardRefs = useRef(new Map<number, HTMLDivElement | null>());
+
+  useEffect(() => {
+    if (!isPlaying || activeFilmId === null) return;
+
+    const target = cardRefs.current.get(activeFilmId) || null;
+    if (!target) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) {
+          setIsPlaying(false);
+          setActiveFilmId(null);
+        }
+      },
+      { root: null, threshold: 0.2, rootMargin: '0px 0px -120px 0px' }
+    );
+
+    observer.observe(target);
+    return () => observer.disconnect();
+  }, [activeFilmId, isPlaying]);
 
   return (
     <section id="work" className="section-surface section-fade py-20 px-4">
@@ -52,12 +73,13 @@ export function FilmShowcase() {
                 setActiveFilmId(film.id);
                 setIsPlaying(true);
               }}
+              ref={(node) => cardRefs.current.set(film.id, node)}
             >
               {isActive && isPlaying && film.vimeoId ? (
                 <div className="absolute inset-0 bg-black flex items-center justify-center">
                   <div style={{ padding: '42.5% 0 0 0', position: 'relative', width: '100%' }}>
                     <iframe
-                      src={`https://player.vimeo.com/video/${film.vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479`}
+                      src={`https://player.vimeo.com/video/${film.vimeoId}?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1`}
                       frameBorder="0"
                       allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
                       referrerPolicy="strict-origin-when-cross-origin"
@@ -96,7 +118,11 @@ export function FilmShowcase() {
               )}
 
               {/* Film info */}
-              <div className={`absolute bottom-0 left-0 right-0 p-6 transition-opacity ${isActive && isPlaying ? 'opacity-0' : 'opacity-100'}`}>
+              <div
+                className={`absolute bottom-0 left-0 right-0 p-6 transition-opacity ${
+                  isActive && isPlaying ? 'opacity-0 pointer-events-none' : 'opacity-100'
+                }`}
+              >
                 <div className="flex items-center gap-2 mb-2">
                   <span className="text-white/70 text-sm">{film.category}</span>
                   <span className="text-white/70 text-sm">•</span>
